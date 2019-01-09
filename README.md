@@ -1,9 +1,13 @@
 # pwa-prototype
 
-## Project setup
+## Installation of Vue.js and Vue-CLI
 ```
 npm install -g vue
-npm install -g 
+npm install -g @vue/cli
+```
+
+## Project setup
+```
 npm install
 ```
 
