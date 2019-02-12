@@ -1,4 +1,4 @@
-# pwa-prototype
+# key-buddy
 
 ## Installation of Vue.js and Vue-CLI
 ```
