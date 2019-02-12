@@ -1,6 +1,6 @@
 {
-  "name": "pwa-prototype",
-  "short_name": "pwa-prototype",
+  "name": "key-buddy",
+  "short_name": "key-buddy",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
