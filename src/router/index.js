@@ -4,15 +4,23 @@ import Login from '@/components/Login'
 import Home from '@/components/Home'
 import Settings from '@/components/Settings'
 import StartScreen from '@/components/StartScreen'
+import firebase from 'firebase'
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
     routes: [
+        {
+            path: '*',
+            redirect: '/'
+        },
         {
             path: '/',
             name: 'Home',
-            component: Home
+            component: Home,
+            meta: {
+                requiresAuth: true
+            }
         },
         {
             path: '/login',
@@ -22,7 +30,10 @@ export default new Router({
         {
             path: '/settings',
             name: 'Settings',
-            component: Settings
+            component: Settings,
+            meta: {
+                requiresAuth: true
+            }
         },
         {
             path: '/start',
@@ -30,4 +41,19 @@ export default new Router({
             component: StartScreen
         }
     ]
-})
+});
+
+router.beforeEach((to, from, next) => {
+    const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
+    const currentUser = firebase.auth().currentUser;
+
+    if (requiresAuth && !currentUser) {
+        next('/login');
+    } else if (requiresAuth && currentUser) {
+        next();
+    } else {
+        next();
+    }
+});
+
+export default router
