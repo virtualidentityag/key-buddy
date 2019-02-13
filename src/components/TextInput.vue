@@ -37,5 +37,6 @@ input {
   color: #fff;
   font-size: 14px;
   font-family: "Quicksand", sans-serif;
+  outline: none;
 }
 </style>
