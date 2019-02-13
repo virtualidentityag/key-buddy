@@ -158,4 +158,4 @@ if (!isIE) {
   }
 }
 
-export { signIn };
+export { signIn, signOut };

@@ -3,13 +3,14 @@
 		<h1>Login</h1>
 		<h4 id="WelcomeMessage"></h4>
 		<button id="SignIn" v-on:click="signIn">Sign In</button>
+		<button id="SignOut" v-on:click="signOut">Sign Out</button>
 		<br/><br/>
 		<pre id="json"></pre>
 	</div>
 </template>
 
 <script>
-import { signIn } from '../js/login'
+import { signIn, signOut } from '../js/login'
 
 export default {
 	name: 'Login',
@@ -19,6 +20,9 @@ export default {
 	methods: {
 		signIn: function() {
 			signIn();
+		},
+		signOut: function() {
+			signOut();
 		}
 	}
 }
