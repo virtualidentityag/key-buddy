@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Login/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Login from "./components/Login.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    Login
   }
-}
+};
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Quicksand");
+body {
+  margin: 0;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background: linear-gradient(to top right, #a39dff, #55a7fc, #50e9be);
+  height: 100vh;
+  width: 100vw;
+  font-family: "Quicksand", sans-serif;
 }
 </style>
