@@ -4,6 +4,7 @@
 		<h4 id="WelcomeMessage"></h4>
 		<button id="SignIn" v-on:click="signIn">Sign In</button>
 		<button id="SignOut" v-on:click="signOut">Sign Out</button>
+		<button id="BackendTest" v-on:click="testGet">Test GET</button>
 		<br/><br/>
 		<pre id="json"></pre>
 	</div>
@@ -11,6 +12,8 @@
 
 <script>
 import { signIn, signOut } from '../js/login'
+import { get } from '../api/api'
+// import { login } from '../api/auth'
 
 export default {
 	name: 'Login',
@@ -20,9 +23,13 @@ export default {
 	methods: {
 		signIn: function() {
 			signIn();
+			// login();
 		},
 		signOut: function() {
 			signOut();
+		},
+		testGet: function() {
+			get({id: '1234'});
 		}
 	}
 }
