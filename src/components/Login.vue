@@ -1,21 +1,30 @@
 <template>
-    <div>
-        <form action="/">
-            <div class="input">
-                <label for="input1">Type in username: </label>
-                <input  id="input1" placeholder="Username">
-            </div>
-            <div class="input">
-                <label for="input2">Type in email: </label>
-                <input class="input" id="input2" placeholder="Email">
-            </div>
-        </form>
-        <p><router-link to="/">Back to home</router-link></p>
-    </div>
+  <div class="login">
+    <Header/>
+    <Headline content="Please login with your VI credentials!"/>
+    <TextInput label="E-Mail"/>
+    <TextInput label="Password"/>
+    <LoginButton/>
+  </div>
 </template>
 
-<style>
-    .input {
-        margin-top: 30px;
-    }
+<script>
+import TextInput from "./TextInput.vue";
+import Header from "./Header.vue";
+import Headline from "./Headline.vue";
+import LoginButton from "./LoginButton.vue";
+
+export default {
+  name: "Login",
+  components: {
+    TextInput,
+    Header,
+    Headline,
+    LoginButton
+  }
+};
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
 </style>

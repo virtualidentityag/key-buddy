@@ -14,6 +14,5 @@
             <li><router-link to="/settings">Go to settings</router-link></li>
             <li><router-link to="/start">Go to start screen</router-link></li>
         </ul>
-        <img src="../../public/img/icons/android-chrome-512x512.png" alt="Wurst">
     </div>
 </template>
