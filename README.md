@@ -33,3 +33,18 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Testing service-worker
+First:
+```
+npm install -g serve
+```
+After serve is installed build the project
+```
+npm run build
+```
+Then
+```
+serve - s dist
+```
+Now your Serviceworker will work properly. Have Fun!
