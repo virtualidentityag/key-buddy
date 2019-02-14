@@ -19,8 +19,8 @@ export default {
 .inputWrapper {
   position: relative;
   display: block;
-  top: 210px;
   text-align: center;
+  margin-top: 10px;
 }
 label {
   color: #fff;
@@ -37,5 +37,6 @@ input {
   color: #fff;
   font-size: 14px;
   font-family: "Quicksand", sans-serif;
+  outline: none;
 }
 </style>

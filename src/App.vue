@@ -17,7 +17,6 @@ body {
 }
 #app {
   background: linear-gradient(to top right, #a39dff, #55a7fc, #50e9be);
-  height: 100vh;
   font-family: "Quicksand", sans-serif;
 }
 </style>
