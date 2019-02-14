@@ -2,7 +2,7 @@ import firebase from 'firebase'
 import 'firebase/firestore'
 
 const config = {
-    apiKey: "",
+    apiKey: "test",
     authDomain: "",
     databaseURL: "",
     projectId: "",
