@@ -15,7 +15,6 @@
             <li><router-link to="/start">Go to start screen</router-link></li>
             <li><a @click="logout" href="javascript:void(0)">Logout</a></li>
         </ul>
-        <img src="../../public/img/icons/android-chrome-512x512.png" alt="Wurst">
     </div>
 </template>
 
