@@ -15,6 +15,10 @@ export const store = new Vuex.Store({
             fb.usersCollection.doc(state.currentUser.uid).get().then(res => {
                 commit('setUserProfile', res.data());
             });
+        },
+        clearData({commit}) {
+            commit('setCurrentUser', null);
+            commit('setUserProfile', {});
         }
     },
     mutations: {

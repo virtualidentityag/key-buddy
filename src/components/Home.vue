@@ -13,7 +13,26 @@
             <li><router-link to="/login">Go to login</router-link></li>
             <li><router-link to="/settings">Go to settings</router-link></li>
             <li><router-link to="/start">Go to start screen</router-link></li>
+            <li><a @click="logout" href="javascript:void(0)">Logout</a></li>
         </ul>
         <img src="../../public/img/icons/android-chrome-512x512.png" alt="Wurst">
     </div>
 </template>
+
+<script>
+    const fb = require('../firebaseConfig.js');
+
+    export default {
+        methods: {
+            logout() {
+                fb.auth.signOut().then(()=> {
+                    this.$store.dispatch('clearData');
+                    this.$router.push('/login');
+                }).catch(err => {
+                    // eslint-disable-next-line
+                    console.log(err);
+                })
+            }
+        }
+    }
+</script>
