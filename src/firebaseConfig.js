@@ -2,12 +2,12 @@ import firebase from 'firebase'
 import 'firebase/firestore'
 
 const config = {
-    apiKey: "AIzaSyCUDuidzDz6TyX4KGoALjug-KX2jTfkIVI",
-    authDomain: "key-buddy.firebaseapp.com",
-    databaseURL: "https://key-buddy.firebaseio.com",
-    projectId: "key-buddy",
-    storageBucket: "key-buddy.appspot.com",
-    messagingSenderId: "505377396802"
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: ""
 };
 
 firebase.initializeApp(config);
