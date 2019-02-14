@@ -8,6 +8,11 @@ module.exports = {
 
         workboxPluginMode: 'InjectManifest',
         workboxOptions: {
+            globDirectory: 'dist/',
+            globPatterns: [
+                '**/*.{css,ico,html,js,json,txt}'
+            ],
+            swDest: 'service-worker.js',
             swSrc: 'src/service-worker.js',
         }
     }

@@ -1,30 +1,68 @@
 <template>
-  <div class="login">
-    <Header/>
-    <Headline content="Please login with your VI credentials!"/>
-    <TextInput label="E-Mail"/>
-    <TextInput label="Password"/>
-    <LoginButton/>
-  </div>
+    <div id="login">
+        <!--loading screen goes here-->
+        <transition name="fade">
+            <div v-if="performingRequest" class="loading">
+                <p>Loading...</p>
+            </div>
+        </transition>
+        <form>
+            <div class="input">
+                <label for="input1">Type in username: </label>
+                <input v-model.trim="loginForm.email" type="text" id="input1" placeholder="Email">
+            </div>
+            <div class="input">
+                <label for="input2">Type in email: </label>
+                <input v-model.trim="loginForm.password" type="password" class="input" id="input2"
+                       placeholder="*******">
+            </div>
+            <button @click="login">Log in</button>
+        </form>
+        <transition name="fade">
+            <div v-if="errorMsg !== ''" class="error-msg">
+                <p>{{ errorMsg }}</p>
+            </div>
+        </transition>
+        <p>
+            <router-link to="/">Back to home</router-link>
+        </p>
+    </div>
 </template>
 
 <script>
-import TextInput from "./TextInput.vue";
-import Header from "./Header.vue";
-import Headline from "./Headline.vue";
-import LoginButton from "./LoginButton.vue";
+    const fb = require('../firebaseConfig.js');
 
-export default {
-  name: "Login",
-  components: {
-    TextInput,
-    Header,
-    Headline,
-    LoginButton
-  }
-};
+    export default {
+        data() {
+            return {
+                loginForm: {
+                    email: '',
+                    password: ''
+                },
+                performingRequest: false,
+                errorMsg: ''
+            }
+        },
+        methods: {
+            login() {
+                this.performingRequest = true;
+
+                fb.auth.signInWithEmailAndPassword(this.loginForm.email, this.loginForm.password).then(user => {
+                    this.$store.commit('setCurrentUser', user.user);
+                    this.$store.dispatch('fetchUserProfile');
+                    this.performingRequest = false;
+                    this.$router.push('/');
+                }).catch(err => {
+                    this.performingRequest = false;
+                    this.errorMsg = err.message;
+                })
+            }
+        }
+    }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
+    .input {
+        margin-top: 30px;
+    }
 </style>
