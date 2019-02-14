@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="[buttonWrapperClass]">
+  <div v-bind:class="[buttonWrapperClass]"  v-on:click="$emit('login')">
     <button v-bind:class="[buttonClass]">{{content}}</button>
   </div>
 </template>
@@ -29,6 +29,7 @@ button {
   background: linear-gradient(to top right, #ffbc8f, #ff82c4, #ff4ff1);
   box-shadow: 7px 7px 11px -5px rgba(0, 0, 0, 0.75);
   outline: none;
+  cursor: pointer;
 }
 .initialQuestion__button--small {
   width: 100px;

@@ -16,7 +16,7 @@
                 <input v-model.trim="loginForm.password" type="password" class="input" id="input2"
                        placeholder="*******">
             </div>
-            <button @click="login">Log in</button>
+            <Button v-on:login="login" content="Login"></Button>
         </form>
         <transition name="fade">
             <div v-if="errorMsg !== ''" class="error-msg">
@@ -31,8 +31,11 @@
 
 <script>
     const fb = require('../firebaseConfig.js');
-
+    import Button from './Button.vue';
     export default {
+        components: {
+          Button
+        },
         data() {
             return {
                 loginForm: {
