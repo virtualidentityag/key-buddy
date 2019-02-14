@@ -1,14 +1,15 @@
 <template>
     <div id="login">
         <!--loading screen goes here-->
+        <Headline content="Please login with your credentials"></Headline>
         <transition name="fade">
             <div v-if="performingRequest" class="loading">
                 <p>Loading...</p>
             </div>
         </transition>
         <form>
-            <Text-input  v-model.trim="loginForm.email" type="text" label="Email"></Text-input>
-            <Text-input  v-model.trim="loginForm.password" type="password" label="Password"></Text-input>
+            <Text-input v-model.trim="loginForm.email" type="text" label="Email"></Text-input>
+            <Text-input v-model.trim="loginForm.password" type="password" label="Password"></Text-input>
             <Button v-on:login="login" content="Login"></Button>
         </form>
         <transition name="fade">
@@ -23,10 +24,13 @@
     const fb = require('../firebaseConfig.js');
     import Button from './Button.vue';
     import TextInput from './TextInput.vue';
+    import Headline from './Headline.vue';
+
     export default {
         components: {
-          Button,
-          TextInput
+            Button,
+            TextInput,
+            Headline
         },
         data() {
             return {
@@ -57,7 +61,7 @@
 </script>
 
 <style>
-    #login  {
+    #login {
         padding-top: 50px;
     }
 </style>
