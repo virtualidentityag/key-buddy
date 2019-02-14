@@ -1,5 +1,11 @@
 <template>
-    <div>
+    <div id="login">
+        <!--loading screen goes here-->
+        <transition name="fade">
+            <div v-if="performingRequest" class="loading">
+                <p>Loading...</p>
+            </div>
+        </transition>
         <form>
             <div class="input">
                 <label for="input1">Type in username: </label>
@@ -12,6 +18,11 @@
             </div>
             <button @click="login">Log in</button>
         </form>
+        <transition name="fade">
+            <div v-if="errorMsg !== ''" class="error-msg">
+                <p>{{ errorMsg }}</p>
+            </div>
+        </transition>
         <p>
             <router-link to="/">Back to home</router-link>
         </p>
