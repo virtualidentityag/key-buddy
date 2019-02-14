@@ -16,9 +16,6 @@
                 <p>{{ errorMsg }}</p>
             </div>
         </transition>
-        <p>
-            <router-link to="/">Back to home</router-link>
-        </p>
     </div>
 </template>
 
@@ -60,7 +57,7 @@
 </script>
 
 <style>
-    .input {
-        margin-top: 30px;
+    #login  {
+        padding-top: 50px;
     }
 </style>

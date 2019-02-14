@@ -1,12 +1,17 @@
 <template>
     <div id="app">
+        <Header></Header>
         <router-view/>
     </div>
 </template>
 
 <script>
+    import Header from './components/Header.vue';
     export default {
         name: 'app',
+        components: {
+            Header
+        }
     }
 </script>
 
@@ -16,7 +21,8 @@ body {
   margin: 0;
 }
 #app {
-  background: linear-gradient(to top right, #a39dff, #55a7fc, #50e9be);
-  font-family: "Quicksand", sans-serif;
+    background: linear-gradient(to top right, #a39dff, #55a7fc, #50e9be);
+    font-family: "Quicksand", sans-serif;
+    height: 100vh;
 }
 </style>
