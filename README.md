@@ -1,11 +1,5 @@
 # key-buddy
 
-## Installation of Vue.js and Vue-CLI
-```
-npm install vue
-npm install @vue/cli
-```
-
 ## Project setup
 ```
 npm install
