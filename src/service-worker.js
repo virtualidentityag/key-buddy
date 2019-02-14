@@ -1,13 +1,12 @@
-
 workbox.setConfig({
     debug: true,
 });
 
-workbox.precaching.precacheAndRoute([]);
+workbox.precaching.precacheAndRoute(self.__precacheManifest || []);
 
 workbox.routing.registerRoute(
     /\.(?:png|gif|jpg|jpeg|svg)$/,
-    workbox.strategies.staleWhileRevalidate({
+    workbox.strategies.cacheFirst({
         cacheName: 'images',
         plugins: [
             new workbox.expiration.Plugin({
