@@ -7,15 +7,8 @@
             </div>
         </transition>
         <form>
-            <div class="input">
-                <label for="input1">Type in username: </label>
-                <input v-model.trim="loginForm.email" type="text" id="input1" placeholder="Email">
-            </div>
-            <div class="input">
-                <label for="input2">Type in email: </label>
-                <input v-model.trim="loginForm.password" type="password" class="input" id="input2"
-                       placeholder="*******">
-            </div>
+            <Text-input  v-model.trim="loginForm.email" type="text" label="Email"></Text-input>
+            <Text-input  v-model.trim="loginForm.password" type="password" label="Password"></Text-input>
             <Button v-on:login="login" content="Login"></Button>
         </form>
         <transition name="fade">
@@ -32,9 +25,11 @@
 <script>
     const fb = require('../firebaseConfig.js');
     import Button from './Button.vue';
+    import TextInput from './TextInput.vue';
     export default {
         components: {
-          Button
+          Button,
+          TextInput
         },
         data() {
             return {

@@ -1,7 +1,7 @@
 <template>
   <div class="inputWrapper">
     <label>{{label}}</label>
-    <input type="text">
+    <input :type="type"  v-bind:value="value" v-on:input="$emit('input', $event.target.value)">
   </div>
 </template>
 
@@ -9,7 +9,9 @@
 export default {
   name: "TextInput",
   props: {
-    label: String
+    label: String,
+    type: String,
+    value: String
   }
 };
 </script>
