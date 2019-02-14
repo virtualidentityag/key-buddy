@@ -19,8 +19,8 @@ export default {
 .inputWrapper {
   position: relative;
   display: block;
-  top: 210px;
   text-align: center;
+  margin-top: 10px;
 }
 label {
   color: #fff;

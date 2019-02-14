@@ -8,7 +8,8 @@
 export default {
   name: "Headline",
   props: {
-    content: String
+    content: String,
+    headlineClass: String
   }
 };
 </script>
@@ -21,8 +22,6 @@ h2 {
   font-weight: 200;
   font-size: 30px;
   text-align: center;
-  margin: 0 20px;
-  position: relative;
-  top: 170px;
+  margin: 0 20px 20px 20px;
 }
 </style>
