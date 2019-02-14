@@ -1,19 +1,16 @@
 <template>
   <div id="app">
     <Login/>
-    <!-- <InitialQuestion/> -->
   </div>
 </template>
 
 <script>
 import Login from "./components/Login.vue";
-// import InitialQuestion from "./components/InitialQuestion.vue";
 
 export default {
   name: "app",
   components: {
     Login
-    // InitialQuestion
   }
 };
 </script>
