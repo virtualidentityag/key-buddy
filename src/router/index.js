@@ -4,15 +4,23 @@ import Login from '@/components/Login'
 import Home from '@/components/Home'
 import Settings from '@/components/Settings'
 import StartScreen from '@/components/StartScreen'
+import KeyQuestion from '@/components/KeyQuestion'
 import firebase from 'firebase'
 
 Vue.use(Router);
 
 const router = new Router({
-    routes: [
-        {
+    routes: [{
             path: '*',
             redirect: '/'
+        },
+        {
+            path: '/keyQuestion',
+            name: 'KeyQuestion',
+            component: KeyQuestion,
+            meta: {
+                requiresAuth: true
+            }
         },
         {
             path: '/',
