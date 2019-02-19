@@ -1,16 +1,31 @@
 <template>
-    <div>
-        <h1>Are you in the office right now?</h1>
-        <button>Yes</button>
-        <button>No</button>
-
-        <h2><span>2</span> Keys are currently in the Office</h2>
-        <h2><span>23</span> People are currently in the office</h2>
-    </div>
+  <div>
+    <Headline content="Are you in the office right now?" headline-class="home__headline--position"/>
+    <input-toggle/>
+    <Bar/>
+    <Counter number="3" content="Keys are currently in the office"/>
+    <Counter number="23" content="People are currently in the office"/>
+    <information-text content="Make sure to check in every morning and chek out every evening to ensure the system is up-to-date!" informationText-class="home__informationText--position"/>
+  </div>
 </template>
 
 <script>
-    export default {
+import Headline from "./Headline.vue";
+import Bar from "./Bar.vue";
+import InformationText from "./InformationText.vue";
+import InputToggle from "./InputToggle.vue";
+import Counter from "./Counter.vue";
 
-    }
+export default {
+  name: "Home",
+  components: {
+    Headline,
+    Bar,
+    InformationText,
+    InputToggle,
+    Counter
+  }
+};
 </script>
+<style>
+</style>

@@ -1,14 +1,15 @@
 <template>
-  <div class='informationText'>
-    <p>{{content}}</p>
+  <div class="informationText">
+    <p v-bind:class="[infomationTextClass]">{{content}}</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'InformationText',
+  name: "InformationText",
   props: {
-    content: String
+    content: String,
+    infomationTextClass: String
   }
 };
 </script>
@@ -19,5 +20,8 @@ p {
   color: #fff;
   text-align: center;
   margin: 40px 20px;
+}
+.home__informationText--position {
+  text-align: left;
 }
 </style>

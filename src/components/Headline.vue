@@ -1,5 +1,5 @@
 <template>
-  <div class="headline">
+  <div class="headline" v-bind:class="[headlineClass]">
     <h2>{{ content }}</h2>
   </div>
 </template>
@@ -23,5 +23,9 @@ h2 {
   font-size: 30px;
   text-align: center;
   margin: 0 20px 20px 20px;
+}
+.home__headline--position {
+  width: 200px;
+  margin-top: 20px;
 }
 </style>
