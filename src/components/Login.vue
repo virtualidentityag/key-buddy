@@ -61,7 +61,7 @@ export default {
           this.$store.commit('setCurrentUser', user.user);
           this.$store.dispatch('fetchUserProfile');
           this.performingRequest = false;
-          this.$router.push('/');
+          this.$router.push('/keyQuestion');
         })
         .catch(err => {
           this.performingRequest = false;
