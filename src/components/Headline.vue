@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Headline",
+  name: 'Headline',
   props: {
     content: String,
     headlineClass: String

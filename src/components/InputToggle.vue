@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "InputToggle"
+  name: 'InputToggle'
 };
 </script>
 
@@ -40,7 +40,7 @@ export default {
 
 .inputToggle__slider:before {
   position: absolute;
-  content: "";
+  content: '';
   height: 26px;
   width: 26px;
   left: 4px;

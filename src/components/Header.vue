@@ -22,7 +22,7 @@
     const fb = require('../firebaseConfig.js');
 
     export default {
-        name: "Header",
+        name: 'Header',
         methods: {
             logout() {
                 fb.auth.signOut().then(() => {

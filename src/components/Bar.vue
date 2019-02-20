@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Bar",
+  name: 'Bar',
   props: {
     barClass: String
   }

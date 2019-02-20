@@ -1,22 +1,22 @@
 <template>
-  <div id='login'>
+  <div id="login">
     <!--loading screen goes here-->
     <!-- key logo goes here -->
-    <div class='login__wrapper'>
-      <Headline content='Please login with your credentials!'></Headline>
-      <transition name='fade'>
-        <div v-if='performingRequest' class='loading'>
+    <div class="login__wrapper">
+      <Headline content="Please login with your credentials!"></Headline>
+      <transition name="fade">
+        <div v-if="performingRequest" class="loading">
           <p>Loading...</p>
         </div>
       </transition>
       <Bar/>
       <form>
-        <Text-input v-model.trim='loginForm.email' type='text' label='Email'></Text-input>
-        <Text-input v-model.trim='loginForm.password' type='password' label='Password'></Text-input>
-        <Button v-on:login='login' content='Login'></Button>
+        <Text-input v-model.trim="loginForm.email" type="text" label="Email"></Text-input>
+        <Text-input v-model.trim="loginForm.password" type="password" label="Password"></Text-input>
+        <Button v-on:login="login" content="Login"></Button>
       </form>
-      <transition name='fade'>
-        <div v-if="errorMsg !== ''" class='error-msg'>
+      <transition name="fade">
+        <div v-if="errorMsg !== ''" class="error-msg">
           <p>{{ errorMsg }}</p>
         </div>
       </transition>

@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: "TextInput",
+  name: 'TextInput',
   props: {
     label: String,
     type: String,
@@ -38,7 +38,7 @@ input {
   margin: 15px auto;
   color: #fff;
   font-size: 14px;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   outline: none;
 }
 </style>

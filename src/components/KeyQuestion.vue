@@ -13,13 +13,13 @@
 </template>
 
 <script>
-import Headline from "./Headline.vue";
-import Button from "./Button.vue";
-import Bar from "./Bar.vue";
-import InformationText from "./InformationText.vue";
+import Headline from './Headline.vue';
+import Button from './Button.vue';
+import Bar from './Bar.vue';
+import InformationText from './InformationText.vue';
 
 export default {
-  name: "KeyQuestion",
+  name: 'KeyQuestion',
   components: {
     Headline,
     Button,
