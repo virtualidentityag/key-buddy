@@ -1,7 +1,7 @@
 <template>
   <div class="counter">
     <span class="counter__number">{{ number }}</span>
-    <h2>{{ content }}</h2>
+    <h2 class="counter__description">{{ content }}</h2>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   margin: 0 auto;
   width: 250px;
 }
-.counter h2 {
+.counter__description {
   font-weight: 100;
   font-size: 20px;
   margin-left: 10px;

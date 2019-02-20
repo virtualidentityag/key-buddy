@@ -1,11 +1,14 @@
 <template>
   <div>
-    <Headline content="Are you in the office right now?" headline-class="home__headline--position"/>
+    <Headline content="Are you in the office right now?" headline-class="home__headline--topLeft"/>
     <input-toggle/>
     <Bar/>
     <Counter number="3" content="Keys are currently in the office"/>
     <Counter number="23" content="People are currently in the office"/>
-    <information-text content="Make sure to check in every morning and chek out every evening to ensure the system is up-to-date!" informationText-class="home__informationText--position"/>
+    <information-text
+      content="Make sure to check in every morning and chek out every evening to ensure the system is up-to-date!"
+      informationText-class="home__informationText--position"
+    />
   </div>
 </template>
 

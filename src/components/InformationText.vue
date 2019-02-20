@@ -1,6 +1,6 @@
 <template>
   <div class="informationText">
-    <p v-bind:class="[infomationTextClass]">{{content}}</p>
+    <p class="informationText__content" v-bind:class="[infomationTextClass]">{{content}}</p>
   </div>
 </template>
 
@@ -16,12 +16,12 @@ export default {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
-p {
+.informationText__content {
   color: #fff;
   text-align: center;
   margin: 40px 20px;
 }
-.home__informationText--position {
+.home__informationText--alignLeft {
   text-align: left;
 }
 </style>

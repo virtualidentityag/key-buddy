@@ -1,7 +1,7 @@
 <template>
   <div class="inputToggle">
     <label class="inputToggle__switch">
-      <input type="checkbox">
+      <input class="inputToggle__input" type="checkbox">
       <span class="inputToggle__slider inputToggle__slider--round"></span>
     </label>
   </div>
@@ -15,8 +15,6 @@ export default {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
-.inputToggle {
-}
 .inputToggle__switch {
   position: relative;
   display: inline-block;
@@ -24,7 +22,7 @@ export default {
   height: 37px;
 }
 
-input {
+.inputToggle__input {
   opacity: 0;
   width: 0;
   height: 0;
@@ -51,15 +49,15 @@ input {
   transition: 0.4s;
 }
 
-input:checked + .inputToggle__slider:before {
+.inputToggle__input:checked + .inputToggle__slider:before {
   background: linear-gradient(to top right, #ffbc8f, #ff82c4, #ff4ff1);
 }
 
-input:focus + .inputToggle__slider {
+.inputToggle__input:focus + .inputToggle__slider {
   box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .inputToggle__slider:before {
+.inputToggle__input:checked + .inputToggle__slider:before {
   transform: translateX(26px);
 }
 

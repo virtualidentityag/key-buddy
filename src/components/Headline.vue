@@ -24,7 +24,7 @@ h2 {
   text-align: center;
   margin: 0 20px 20px 20px;
 }
-.home__headline--position {
+.home__headline--topLeft {
   width: 200px;
   margin-top: 20px;
 }
