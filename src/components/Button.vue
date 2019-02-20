@@ -31,7 +31,7 @@ button {
   outline: none;
   cursor: pointer;
 }
-.initialQuestion__button--small {
+.keyQuestion__button--small {
   width: 100px;
   margin: 10px 10px;
 }
