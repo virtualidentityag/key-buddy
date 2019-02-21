@@ -1,13 +1,14 @@
 <template>
   <div class="keyQuestion">
-    <div class="keyQuestion__wrapper">
-      <Headline content="Do you have a key to the office?"/>
+    <div class="keyQuestion__wrapper container">
+	<div class="keyQuestion__image"></div>
+      <headline content="Do you have a key to the office?"/>
       <div class="keyQuestion__buttonWrapper">
-        <Button button-class="keyQuestion__button--small" content="YES"/>
-        <Button button-class="keyQuestion__button--small" content="NO"/>
+        <Button button-class="button--small" content="YES"/>
+        <Button button-class="button--small" content="NO"/>
       </div>
-      <InformationText content="You can also change this in the settings later."/>
-      <Bar bar-class="keyQuestion__bar--position"/>
+      <information-text content="You can also change this in the settings later."/>
+      <bar/>
     </div>
   </div>
 </template>
@@ -31,14 +32,18 @@ export default {
 
 <!-- Add 'scoped' attribute to limit CSS to this component only -->
 <style scoped>
-.keyQuestion {
-  height: 100vh;
-}
-.keyQuestion__wrapper {
-  margin-top: 55%;
+.keyQuestion__image {
+  height: 30vh; /* placeholder */
 }
 .keyQuestion__buttonWrapper {
   display: flex;
   justify-content: center;
+}
+.keyQuestion__image,
+.keyQuestion__buttonWrapper,
+.keyQuestion .headline,
+.keyQuestion .informationText,
+.keyQuestion .bar {
+  grid-column: 1 / 13;
 }
 </style>

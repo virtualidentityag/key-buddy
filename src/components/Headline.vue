@@ -8,8 +8,14 @@
 export default {
   name: 'Headline',
   props: {
-    content: String,
-    headlineClass: String
+    content: {
+      type: String,
+      default: ''
+    },
+    headlineClass: {
+      type: String,
+      default: ''
+    }
   }
 };
 </script>

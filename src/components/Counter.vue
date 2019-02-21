@@ -9,8 +9,14 @@
 export default {
   name: 'Counter',
   props: {
-    content: String,
-    number: Number
+    content: {
+      type: String,
+      default: ''
+    },
+    number: {
+      type: Number,
+      default: 0
+    }
   }
 };
 </script>

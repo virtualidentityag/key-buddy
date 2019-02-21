@@ -10,7 +10,7 @@
                         <router-link to="/settings" class="header__link">settings</router-link>
                     </li>
                     <li class="header__link header__link--logout">
-                        <a @click="logout" href="javascript:void(0)" class="header__link">Logout</a>
+                        <a @click="logout" href="javascript:void(0)" class="header__link">logout</a>
                     </li>
                 </ul>
             </nav>

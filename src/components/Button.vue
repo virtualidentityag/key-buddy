@@ -8,9 +8,18 @@
 export default {
   name: 'Button',
   props: {
-    content: String,
-    buttonClass: String,
-    buttonWrapperClass: String
+    content: {
+      type: String,
+      default: ''
+    },
+    buttonClass: {
+      type: String,
+      default: ''
+    },
+    buttonWrapperClass: {
+      type: String,
+      default: ''
+    }
   }
 };
 </script>
@@ -31,7 +40,7 @@ button {
   outline: none;
   cursor: pointer;
 }
-.keyQuestion__button--small {
+.button--small {
   width: 100px;
   margin: 10px 10px;
 }

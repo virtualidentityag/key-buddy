@@ -8,8 +8,14 @@
 export default {
   name: 'InformationText',
   props: {
-    content: String,
-    informationTextClass: String
+    content: {
+      type: String,
+      default: ''
+	},
+    informationTextClass: {
+      type: String,
+      default: ''
+	}
   }
 };
 </script>
@@ -19,7 +25,7 @@ export default {
 .informationText__content {
   color: #fff;
   text-align: center;
-  margin: 40px 20px;
+  margin: 5% 20px;
 }
 .informationText--alignLeft .informationText__content {
   text-align: left;

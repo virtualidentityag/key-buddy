@@ -2,17 +2,17 @@
   <div id="login">
     <!--loading screen goes here-->
     <!-- key logo goes here -->
-    <div class="login__wrapper">
-      <Headline content="Please login with your credentials!"></Headline>
+    <div class="login__wrapper container">
+      <headline content="Please login with your credentials!"></headline>
       <transition name="fade">
         <div v-if="performingRequest" class="loading">
           <p>Loading...</p>
         </div>
       </transition>
-      <Bar/>
+      <bar bar-class="bar--flat"/>
       <form>
-        <Text-input v-model.trim="loginForm.email" type="text" label="Email"></Text-input>
-        <Text-input v-model.trim="loginForm.password" type="password" label="Password"></Text-input>
+        <text-input v-model.trim="loginForm.email" type="text" label="Email"></text-input>
+        <text-input v-model.trim="loginForm.password" type="password" label="Password"></text-input>
         <Button v-on:login="login" content="Login"></Button>
       </form>
       <transition name="fade">
@@ -75,5 +75,12 @@ export default {
 <style>
 .login__wrapper {
   padding-top: 50%;
+}
+.login__wrapper .headline,
+.login__wrapper .bar,
+.login__wrapper form,
+.login__wrapper .textInput,
+.login__wrapper .loginButton {
+	grid-column: 1 / 13;
 }
 </style>

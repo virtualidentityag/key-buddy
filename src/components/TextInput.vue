@@ -9,9 +9,18 @@
 export default {
   name: 'TextInput',
   props: {
-    label: String,
-    type: String,
-    value: String
+    label: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: ''
+    },
+    value: {
+      type: String,
+      default: ''
+    }
   }
 };
 </script>

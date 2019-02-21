@@ -1,7 +1,5 @@
 <template>
-	<div class="bar"
-		v-bind:class="[barClass]">
-		<span></span>
+	<div :class="`bar ${barClass}`">
 	</div>
 </template>
 
@@ -9,7 +7,10 @@
 export default {
   name: 'Bar',
   props: {
-    barClass: String
+    barClass: {
+      type: String,
+      default: ''
+    }
   }
 };
 </script>
@@ -21,5 +22,8 @@ export default {
   border-bottom: 8px solid #fff;
   width: 50px;
   margin: 10% auto;
+}
+.bar.bar--flat {
+  margin: auto;
 }
 </style>
