@@ -5,8 +5,16 @@
 	<div class="keyQuestion__image"></div>
       <headline content="Do you have a key to the office?"/>
       <div class="keyQuestion__buttonWrapper">
-        <Button button-class="button--small" content="YES"/>
-        <Button button-class="button--small" content="NO"/>
+        <Button 
+			button-class="button--small" 
+			content="YES"
+			v-on:click="setKey(true)"
+		/>
+        <Button 
+			button-class="button--small" 
+			content="NO"
+			v-on:click="setKey(false)"
+		/>
       </div>
       <information-text content="You can also change this in the settings later."/>
       <bar/>
@@ -22,14 +30,27 @@ import Bar from '../components/Bar.vue';
 import InformationText from '../components/InformationText.vue';
 
 export default {
-  name: 'KeyQuestion',
-  components: {
-    Header,
-    Headline,
-    Button,
-    Bar,
-    InformationText
-  }
+	name: 'KeyQuestion',
+	components: {
+		Header,
+		Headline,
+		Button,
+		Bar,
+		InformationText
+	},
+	methods: {
+		getUser() {
+
+		},
+		// eslint-disable-next-line
+		setKey(val) {
+			// TODO: set user key
+			this.updateUser();
+		},
+		updateUser() {
+			// TODO: update user in database
+		}
+	}
 };
 </script>
 

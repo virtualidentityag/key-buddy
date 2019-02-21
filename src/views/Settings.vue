@@ -14,7 +14,10 @@
 				:level="2"
 			>
 			</headline>
-			<input-toggle :checked="hasNotifications" v-on:toggle="toggleNotifications"/>
+			<input-toggle 
+				:checked="hasNotifications" 
+				v-on:toggle="toggleNotifications"
+			/>
 		</div>
 
 		<div class="settings__row container">
@@ -24,7 +27,10 @@
 				:level="2"
 			>
 			</headline>
-			<input-toggle :checked="hasKey" v-on:toggle="toggleKey"/>
+			<input-toggle 
+				:checked="hasKey" 
+				v-on:toggle="toggleKey"
+			/>
 		</div>
     </div>
 </template>
@@ -52,6 +58,9 @@ export default {
 		};
 	},
 	methods: {
+		getUser() {
+
+		},
 		toggleNotifications() {
 			// TODO: toggle user notifications
 			this.updateUser();

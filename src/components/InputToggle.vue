@@ -1,10 +1,17 @@
 <template>
-  <div class="inputToggle">
-    <label class="inputToggle__switch">
-      <input class="inputToggle__input" type="checkbox" :checked="checked">
-      <span class="inputToggle__slider inputToggle__slider--round" v-on:click="$emit('toggle')"></span>
-    </label>
-  </div>
+	<div class="inputToggle">
+		<label class="inputToggle__switch">
+			<input 
+				class="inputToggle__input" 
+				type="checkbox" 
+				:checked="checked"
+			>
+			<span 
+				class="inputToggle__slider inputToggle__slider--round" 
+				v-on:click="$emit('toggle')"
+			></span>
+		</label>
+	</div>
 </template>
 
 <script>

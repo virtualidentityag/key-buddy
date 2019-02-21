@@ -1,7 +1,10 @@
 <template>
-  <div v-bind:class="[buttonWrapperClass]" v-on:click="$emit('login')">
-    <button v-bind:class="[buttonClass]">{{content}}</button>
-  </div>
+	<div 
+		v-bind:class="[buttonWrapperClass]" 
+		v-on:click="$emit('click')"
+	>
+		<button v-bind:class="[buttonClass]">{{content}}</button>
+	</div>
 </template>
 
 <script>

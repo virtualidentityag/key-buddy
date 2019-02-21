@@ -6,7 +6,9 @@
 			content="Are you in the office right now?" 
 			headline-class="headline--topLeft"
 		/>
-		<input-toggle/>
+		<input-toggle 
+			v-on:toggle="toggleAboard"
+		/>
 		<bar/>
 		<counter 
 			:number="3" 
@@ -33,15 +35,24 @@ import InputToggle from '../components/InputToggle.vue';
 import Counter from '../components/Counter.vue';
 
 export default {
-  name: 'Home',
-  components: {
-    Header,
-    Headline,
-    Bar,
-    InformationText,
-    InputToggle,
-    Counter
-  }
+	name: 'Home',
+	components: {
+		Header,
+		Headline,
+		Bar,
+		InformationText,
+		InputToggle,
+		Counter
+	},
+	methods: {
+		toggleAboard() {
+			// TODO
+			this.updateUser();
+		},
+		updateUser() {
+			// TODO
+		}
+	}
 };
 </script>
 <style>

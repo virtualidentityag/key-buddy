@@ -1,8 +1,11 @@
 <template>
-  <div class="inputWrapper">
-    <label>{{label}}</label>
-    <input :type="type"  v-bind:value="value" v-on:input="$emit('input', $event.target.value)">
-  </div>
+	<div class="inputWrapper">
+		<label>{{label}}</label>
+		<input 
+			:type="type" 
+			v-bind:value="value" 
+			v-on:input="$emit('input', $event.target.value)">
+	</div>
 </template>
 
 <script>

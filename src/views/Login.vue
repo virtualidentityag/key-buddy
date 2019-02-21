@@ -12,9 +12,20 @@
       </transition>
       <bar bar-class="bar--flat"/>
       <form>
-        <text-input v-model.trim="loginForm.email" type="text" label="Email"></text-input>
-        <text-input v-model.trim="loginForm.password" type="password" label="Password"></text-input>
-        <Button v-on:login="login" content="Login"></Button>
+        <text-input 
+			v-model.trim="loginForm.email" 
+			type="text" 
+			label="Email"
+		></text-input>
+        <text-input 
+			v-model.trim="loginForm.password" 
+			type="password" 
+			label="Password"
+		></text-input>
+        <Button 
+			content="Login"
+			v-on:click="login"
+		></Button>
       </form>
       <transition name="fade">
         <div v-if="errorMsg !== ''" class="error-msg">
