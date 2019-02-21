@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import Headline from './Headline.vue';
-import Button from './Button.vue';
-import Bar from './Bar.vue';
-import InformationText from './InformationText.vue';
+import Headline from '../components/Headline.vue';
+import Button from '../components/Button.vue';
+import Bar from '../components/Bar.vue';
+import InformationText from '../components/InformationText.vue';
 
 export default {
   name: 'KeyQuestion',

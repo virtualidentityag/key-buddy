@@ -26,10 +26,10 @@
 
 <script>
 const fb = require('../firebaseConfig.js');
-import Button from './Button.vue';
-import TextInput from './TextInput.vue';
-import Headline from './Headline.vue';
-import Bar from './Bar.vue';
+import Button from '../components/Button.vue';
+import TextInput from '../components/TextInput.vue';
+import Headline from '../components/Headline.vue';
+import Bar from '../components/Bar.vue';
 
 export default {
   components: {

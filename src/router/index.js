@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Login from '@/components/Login'
-import Home from '@/components/Home'
-import Settings from '@/components/Settings'
-import StartScreen from '@/components/StartScreen'
-import KeyQuestion from '@/components/KeyQuestion'
+import Login from '@/views/Login'
+import Home from '@/views/Home'
+import Settings from '@/views/Settings'
+import StartScreen from '@/views/StartScreen'
+import KeyQuestion from '@/views/KeyQuestion'
 import firebase from 'firebase'
 
 Vue.use(Router);

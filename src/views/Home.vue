@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import Headline from './Headline.vue';
-import Bar from './Bar.vue';
-import InformationText from './InformationText.vue';
-import InputToggle from './InputToggle.vue';
-import Counter from './Counter.vue';
+import Headline from '../components/Headline.vue';
+import Bar from '../components/Bar.vue';
+import InformationText from '../components/InformationText.vue';
+import InputToggle from '../components/InputToggle.vue';
+import Counter from '../components/Counter.vue';
 
 export default {
   name: 'Home',
