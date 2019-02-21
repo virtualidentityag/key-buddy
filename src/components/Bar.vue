@@ -1,7 +1,8 @@
 <template>
-  <div class="bar" v-bind:class="[barClass]">
-    <span></span>
-  </div>
+	<div class="bar"
+		v-bind:class="[barClass]">
+		<span></span>
+	</div>
 </template>
 
 <script>
@@ -19,6 +20,6 @@ export default {
   text-align: center;
   border-bottom: 8px solid #fff;
   width: 50px;
-  margin: 0 auto 20px auto;
+  margin: 10% auto;
 }
 </style>

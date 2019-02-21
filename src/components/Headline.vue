@@ -1,6 +1,6 @@
 <template>
   <div class="headline" v-bind:class="[headlineClass]">
-    <h2>{{ content }}</h2>
+    <h2 class="headline--content">{{ content }}</h2>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h2 {
+.headline--content {
   clear: left;
   color: #fff;
   font-weight: 200;
@@ -24,8 +24,12 @@ h2 {
   text-align: center;
   margin: 0 20px 20px 20px;
 }
-.home__headline--topLeft {
-  width: 200px;
+
+.headline--topLeft {
   margin-top: 20px;
+}
+
+.headline--topLeft .headline--content {
+  text-align: left;
 }
 </style>

@@ -25,4 +25,10 @@ body {
     font-family: "Quicksand", sans-serif;
     height: 100vh;
 }
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 0;
+  grid-auto-rows: minmax(0, auto);
+}
 </style>

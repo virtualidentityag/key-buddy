@@ -1,6 +1,6 @@
 <template>
-  <div class="informationText">
-    <p class="informationText__content" v-bind:class="[infomationTextClass]">{{content}}</p>
+  <div :class="`informationText ${informationTextClass}`">
+    <p class="informationText__content">{{content}}</p>
   </div>
 </template>
 
@@ -9,7 +9,7 @@ export default {
   name: 'InformationText',
   props: {
     content: String,
-    infomationTextClass: String
+    informationTextClass: String
   }
 };
 </script>
@@ -21,7 +21,7 @@ export default {
   text-align: center;
   margin: 40px 20px;
 }
-.home__informationText--alignLeft {
+.informationText--alignLeft .informationText__content {
   text-align: left;
 }
 </style>
