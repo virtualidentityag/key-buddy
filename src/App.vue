@@ -1,17 +1,12 @@
 <template>
     <div id="app">
-        <Header></Header>
         <router-view/>
     </div>
 </template>
 
 <script>
-    import Header from './components/Header.vue';
     export default {
         name: 'app',
-        components: {
-            Header
-        }
     }
 </script>
 
@@ -23,7 +18,8 @@ body {
 #app {
     background: linear-gradient(to top right, #a39dff, #55a7fc, #50e9be);
     font-family: "Quicksand", sans-serif;
-    height: 100vh;
+    min-height: 100vh;
+	overflow: auto;
 }
 .container {
   display: grid;

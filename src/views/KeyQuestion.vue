@@ -1,5 +1,6 @@
 <template>
   <div class="keyQuestion">
+    <Header></Header>
     <div class="keyQuestion__wrapper container">
 	<div class="keyQuestion__image"></div>
       <headline content="Do you have a key to the office?"/>
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import Header from '../components/Header.vue';
 import Headline from '../components/Headline.vue';
 import Button from '../components/Button.vue';
 import Bar from '../components/Bar.vue';
@@ -22,6 +24,7 @@ import InformationText from '../components/InformationText.vue';
 export default {
   name: 'KeyQuestion',
   components: {
+    Header,
     Headline,
     Button,
     Bar,

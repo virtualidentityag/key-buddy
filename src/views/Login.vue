@@ -1,5 +1,6 @@
 <template>
   <div id="login">
+    <Header></Header>
     <!--loading screen goes here-->
     <!-- key logo goes here -->
     <div class="login__wrapper container">
@@ -26,6 +27,7 @@
 
 <script>
 const fb = require('../firebaseConfig.js');
+import Header from '../components/Header.vue';
 import Button from '../components/Button.vue';
 import TextInput from '../components/TextInput.vue';
 import Headline from '../components/Headline.vue';
@@ -33,6 +35,7 @@ import Bar from '../components/Bar.vue';
 
 export default {
   components: {
+    Header,
     Button,
     TextInput,
     Headline,

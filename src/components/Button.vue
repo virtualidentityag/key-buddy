@@ -1,5 +1,5 @@
 <template>
-  <div v-bind:class="[buttonWrapperClass]"  v-on:click="$emit('login')">
+  <div v-bind:class="[buttonWrapperClass]" v-on:click="$emit('login')">
     <button v-bind:class="[buttonClass]">{{content}}</button>
   </div>
 </template>
