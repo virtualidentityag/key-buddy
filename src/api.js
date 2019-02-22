@@ -38,31 +38,24 @@ const updateKey = function (hasKey, uid) {
 
 			return getOffice(currentUser.office.id).then(o => {
 				office = o;
-
+				
 				// only update if value has changed
 				if (currentUser.key !== hasKey) {
 					currentUser.key = hasKey;
 					if (hasKey) {
 						// user now has a key -> increase keys in office
 						office.keys++;
+						if (currentUser.inOffice) {
+							office.keysInOffice++;
+						}
 					} else {
 						// user now does not have a key anymore -> decrease keys in office
 						office.keys--;
+						if (currentUser.inOffice) {
+							office.keysInOffice--;
+						}
 					}
-
-					return Promise.all([
-						fb.userCollection.doc(uid).update(currentUser),
-						fb.officeCollection.doc(currentUser.office.id).update(office)
-					])
-					.then(() => {
-						resolve({
-							user: currentUser,
-							office: office
-						});
-					})
-					.catch(err => {
-						reject(err);
-					})
+					return updateUserAndOffice(uid, currentUser, currentUser.office.id, office, resolve, reject);
 				}
 			})
 		});
@@ -97,25 +90,28 @@ const updatePresence = function (isPresent, uid) {
 					} else {
 						office.usersInOffice--;
 					}
-
-					return Promise.all([
-						fb.userCollection.doc(uid).update(currentUser),
-						fb.officeCollection.doc(currentUser.office.id).update(office)
-					])
-					.then(() => {
-						resolve({
-							user: currentUser,
-							office: office
-						});
-					})
-					.catch(err => {
-						reject(err);
-					})
+					return updateUserAndOffice(uid, currentUser, currentUser.office.id, office, resolve, reject);
 				}
 			})
 		});
 	});
 	return promise;
+};
+
+const updateUserAndOffice = function(userId, user, officeId, office, resolve, reject) {
+	return Promise.all([
+		fb.userCollection.doc(userId).update(user),
+		fb.officeCollection.doc(officeId).update(office)
+	])
+	.then(() => {
+		resolve({
+			user: user,
+			office: office
+		});
+	})
+	.catch(err => {
+		reject(err);
+	})
 };
 
 export {

@@ -46,9 +46,10 @@ export default {
 	methods: {
 		setKey(val) {
 			this.performingRequest = true;
-			this.$store.dispatch('updateKey', val)
-			this.performingRequest = false;
-			this.$router.push('/');
+			this.$store.dispatch('updateKey', val).then(() => {
+				this.performingRequest = false;
+				this.$router.push('/');
+			});
 		}
 	}
 };

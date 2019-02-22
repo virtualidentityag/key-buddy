@@ -14,14 +14,12 @@ export const store = new Vuex.Store({
     },
     actions: {
         fetchUserProfile({commit, state}) {
-            return fb.userCollection.doc(state.currentUser.uid).get().then(res => {
+			return fb.userCollection.doc(state.currentUser.uid).get().then(res => {
 				commit('setUserProfile', res.data());
 				return res.data();
             });
 		},
 		fetchOffice({commit, state}) {
-			// eslint-disable-next-line
-			console.log('u', state);
 			return fb.officeCollection.doc(state.userProfile.office.id).get().then(res => {
 				commit('setOffice', res.data());
 				return res.data();
