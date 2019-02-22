@@ -15,6 +15,12 @@ const getUser = function (uid) {
 		});
 };
 
+const setUser = function (uid, user) {
+	return fb.userCollection.doc(uid).update(user).then(() => {
+		return getUser(uid);
+	});
+};
+
 const getOffice = function (id) {
 	if (!fb.officeCollection) {
 		throw new ReferenceError('Could not find "officeCollection" in your firebaseConfig.js!');
@@ -116,6 +122,7 @@ const updateUserAndOffice = function(userId, user, officeId, office, resolve, re
 
 export {
 	getUser,
+	setUser,
 	getOffice,
 	updateKey,
 	updatePresence

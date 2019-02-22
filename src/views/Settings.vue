@@ -51,26 +51,35 @@ export default {
 	},
 	data() {
 		return {
-			// TODO: get user data, set hasNotifications and hasKey
 			hasNotifications: false,
 			hasKey: false,
 			performingRequest: false
 		};
 	},
+	created: function () {
+		this.$store.dispatch('fetchUserProfile')
+			.then(res => {
+				this.currentUser = res;
+				this.hasKey = this.currentUser.key;
+				this.hasNotifications = this.currentUser.notifications;
+			})
+	},
 	methods: {
-		getUser() {
-
-		},
 		toggleNotifications() {
-			// TODO: toggle user notifications
-			this.updateUser();
+			this.performingRequest = true;
+			this.hasNotifications = !this.hasNotifications;
+			this.currentUser.notifications = this.hasNotifications;
+			this.$store.dispatch('updateUser', this.currentUser).then(() => {
+				this.performingRequest = false;
+			});
 		},
 		toggleKey() {
-			// TODO: toggle user key
-			this.updateUser();
-		},
-		updateUser() {
-			// TODO: update user in database
+			this.performingRequest = true;
+			this.hasKey = !this.hasKey;
+			this.currentUser.key = this.hasKey;
+			this.$store.dispatch('updateKey', this.hasKey).then(() => {
+				this.performingRequest = false;
+			});
 		}
 	}
 }
