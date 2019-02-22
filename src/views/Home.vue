@@ -7,15 +7,16 @@
 			headline-class="headline--topLeft"
 		/>
 		<input-toggle 
-			v-on:toggle="toggleAboard"
+			:checked="isPresent" 
+			v-on:toggle="togglePresence"
 		/>
 		<bar/>
 		<counter 
-			:number="3" 
+			:number="keysInOffice" 
 			content="Keys are currently in the office"
 		/>
 		<counter 
-			:number="23" 
+			:number="usersInOffice" 
 			content="People are currently in the office"
 		/>
 		<information-text
@@ -44,13 +45,39 @@ export default {
 		InputToggle,
 		Counter
 	},
+	data() {
+		return {
+			performingRequest: false,
+			currentUser: {},
+			isPresent: false,
+			keysInOffice: 0,
+			usersInOffice: 0
+		};
+	},
+	created: function () {
+		this.$store.dispatch('fetchUserProfile')
+			.then(res => {
+				this.currentUser = res;
+				this.isPresent = this.currentUser.inOffice;
+			})
+		this.$store.dispatch('fetchOffice')
+			.then(res => {
+				this.keysInOffice = res.keysInOffice;
+				this.usersInOffice = res.usersInOffice;
+			})
+	},
 	methods: {
-		toggleAboard() {
-			// TODO
-			this.updateUser();
-		},
-		updateUser() {
-			// TODO
+		togglePresence() {
+			this.performingRequest = true;
+			this.isPresent = !this.isPresent;
+			this.$store.dispatch('updatePresence', this.isPresent)
+				.then(res => {
+					this.currentUser = res.user;
+					this.isPresent = res.user.inOffice;
+					this.keysInOffice = res.office.keysInOffice;
+					this.usersInOffice = res.office.usersInOffice;
+				})
+			this.performingRequest = false;
 		}
 	}
 };

@@ -44,9 +44,6 @@ export default {
 		};
 	},
 	methods: {
-		getUser() {
-
-		},
 		setKey(val) {
 			this.performingRequest = true;
 			this.$store.dispatch('updateKey', val)
