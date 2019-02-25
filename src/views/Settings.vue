@@ -51,6 +51,7 @@ export default {
 	},
 	data() {
 		return {
+			currentUser: {},
 			hasNotifications: false,
 			hasKey: false,
 			performingRequest: false

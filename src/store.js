@@ -23,18 +23,29 @@ export const store = new Vuex.Store({
 				return res.data();
             });
 		},
-		fetchOffice({ commit, state }) {
-			// TODO: need to fetch userProfile first (if it didn't happen already)
-			return fb.officeCollection.doc(state.userProfile.office.id).get().then(res => {
-				commit('setOffice', res.data());
-				return res.data();
-			});
+		fetchOffice({ commit, state, dispatch }) {
+			if (state.userProfile && state.userProfile.office && state.userProfile.office.id) {
+				return fb.officeCollection.doc(state.userProfile.office.id).get().then(res => {
+					commit('setOffice', res.data());
+					return res.data();
+				});
+			} else {
+				return dispatch('fetchUserProfile').then(() => {
+					return fb.officeCollection.doc(state.userProfile.office.id).get().then(res => {
+						commit('setOffice', res.data());
+						return res.data();
+					});
+				});
+			}
 		},
         clearData({commit}) {
             commit('setCurrentUser', null);
             commit('setUserProfile', {});
             commit('setOffice', {});
 		},
+		// TODO: update operations need caching 
+		// otherwise they interfere each other 
+		// (e.g. if you quickly switch the notifications and key toggles in the settings)
 		updateUser({ commit, state }, data) {
 			return _setUser(state.currentUser.uid, data).then((res) => {
 				commit('setUserProfile', res.user);
