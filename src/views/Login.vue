@@ -7,25 +7,14 @@
       <headline content="Please login with your credentials!"></headline>
       <transition name="fade">
         <div v-if="performingRequest" class="loading">
-          <p>Loading...</p>
+          <Loading/>
         </div>
       </transition>
       <bar bar-class="bar--flat"/>
       <form>
-        <text-input 
-			v-model.trim="loginForm.email" 
-			type="text" 
-			label="Email"
-		></text-input>
-        <text-input 
-			v-model.trim="loginForm.password" 
-			type="password" 
-			label="Password"
-		></text-input>
-        <Button 
-			content="Login"
-			v-on:click="login"
-		></Button>
+        <text-input v-model.trim="loginForm.email" type="text" label="Email"></text-input>
+        <text-input v-model.trim="loginForm.password" type="password" label="Password"></text-input>
+        <Button content="Login" v-on:click="login"></Button>
       </form>
       <transition name="fade">
         <div v-if="errorMsg !== ''" class="error-msg">
@@ -37,12 +26,13 @@
 </template>
 
 <script>
-const fb = require('../firebaseConfig.js');
-import Header from '../components/Header.vue';
-import Button from '../components/Button.vue';
-import TextInput from '../components/TextInput.vue';
-import Headline from '../components/Headline.vue';
-import Bar from '../components/Bar.vue';
+const fb = require("../firebaseConfig.js");
+import Header from "../components/Header.vue";
+import Button from "../components/Button.vue";
+import TextInput from "../components/TextInput.vue";
+import Headline from "../components/Headline.vue";
+import Bar from "../components/Bar.vue";
+import Loading from "../components/Loading.vue";
 
 export default {
   components: {
@@ -50,16 +40,17 @@ export default {
     Button,
     TextInput,
     Headline,
-    Bar
+    Bar,
+    Loading
   },
   data() {
     return {
       loginForm: {
-        email: '',
-        password: ''
+        email: "",
+        password: ""
       },
       performingRequest: false,
-      errorMsg: ''
+      errorMsg: ""
     };
   },
   methods: {
@@ -72,10 +63,10 @@ export default {
           this.loginForm.password
         )
         .then(user => {
-          this.$store.commit('setCurrentUser', user.user);
-          this.$store.dispatch('fetchUserProfile');
+          this.$store.commit("setCurrentUser", user.user);
+          this.$store.dispatch("fetchUserProfile");
           this.performingRequest = false;
-          this.$router.push('/keyQuestion');
+          this.$router.push("/keyQuestion");
         })
         .catch(err => {
           this.performingRequest = false;
@@ -95,6 +86,6 @@ export default {
 .login__wrapper form,
 .login__wrapper .textInput,
 .login__wrapper .loginButton {
-	grid-column: 1 / 13;
+  grid-column: 1 / 13;
 }
 </style>
