@@ -39,6 +39,6 @@ npm run build
 ```
 Then
 ```
-serve - s dist
+http-server dist
 ```
 Now your Serviceworker will work properly. Have Fun!

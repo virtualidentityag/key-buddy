@@ -1,6 +1,7 @@
 {
   "name": "key-buddy",
   "short_name": "key-buddy",
+  "gcm_sender_id": "140535794289",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
