@@ -38,17 +38,18 @@ export default {
 		Bar,
 		InformationText
 	},
+	data() {
+		return {
+			performingRequest: false
+		};
+	},
 	methods: {
-		getUser() {
-
-		},
-		// eslint-disable-next-line
 		setKey(val) {
-			// TODO: set user key
-			this.updateUser();
-		},
-		updateUser() {
-			// TODO: update user in database
+			this.performingRequest = true;
+			this.$store.dispatch('updateKey', val).then(() => {
+				this.performingRequest = false;
+				this.$router.push('/');
+			});
 		}
 	}
 };
