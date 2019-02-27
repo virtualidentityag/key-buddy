@@ -1,14 +1,16 @@
 <template>
-  <div class="bar" v-bind:class="[barClass]">
-    <span></span>
-  </div>
+	<div :class="`bar ${barClass}`">
+	</div>
 </template>
 
 <script>
 export default {
-  name: "Bar",
+  name: 'Bar',
   props: {
-    barClass: String
+    barClass: {
+      type: String,
+      default: ''
+    }
   }
 };
 </script>
@@ -19,6 +21,9 @@ export default {
   text-align: center;
   border-bottom: 8px solid #fff;
   width: 50px;
-  margin: 0 auto 20px auto;
+  margin: 10% auto;
+}
+.bar.bar--flat {
+  margin: auto;
 }
 </style>

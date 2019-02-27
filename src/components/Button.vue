@@ -1,16 +1,28 @@
 <template>
-  <div v-bind:class="[buttonWrapperClass]">
-    <button v-bind:class="[buttonClass]">{{content}}</button>
-  </div>
+	<div 
+		v-bind:class="[buttonWrapperClass]" 
+		v-on:click="$emit('click')"
+	>
+		<button v-bind:class="[buttonClass]">{{content}}</button>
+	</div>
 </template>
 
 <script>
 export default {
-  name: "Button",
+  name: 'Button',
   props: {
-    content: String,
-    buttonClass: String,
-    buttonWrapperClass: String
+    content: {
+      type: String,
+      default: ''
+    },
+    buttonClass: {
+      type: String,
+      default: ''
+    },
+    buttonWrapperClass: {
+      type: String,
+      default: ''
+    }
   }
 };
 </script>
@@ -29,8 +41,9 @@ button {
   background: linear-gradient(to top right, #ffbc8f, #ff82c4, #ff4ff1);
   box-shadow: 7px 7px 11px -5px rgba(0, 0, 0, 0.75);
   outline: none;
+  cursor: pointer;
 }
-.initialQuestion__button--small {
+.button--small {
   width: 100px;
   margin: 10px 10px;
 }

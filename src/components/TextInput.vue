@@ -1,15 +1,29 @@
 <template>
-  <div class="inputWrapper">
-    <label>{{label}}</label>
-    <input type="text">
-  </div>
+	<div class="inputWrapper">
+		<label>{{label}}</label>
+		<input 
+			:type="type" 
+			v-bind:value="value" 
+			v-on:input="$emit('input', $event.target.value)">
+	</div>
 </template>
 
 <script>
 export default {
-  name: "TextInput",
+  name: 'TextInput',
   props: {
-    label: String
+    label: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: ''
+    },
+    value: {
+      type: String,
+      default: ''
+    }
   }
 };
 </script>
@@ -36,7 +50,7 @@ input {
   margin: 15px auto;
   color: #fff;
   font-size: 14px;
-  font-family: "Quicksand", sans-serif;
+  font-family: 'Quicksand', sans-serif;
   outline: none;
 }
 </style>
