@@ -11,8 +11,17 @@ const fb = require('./firebaseConfig.js');
 // handle page reload
 fb.auth.onAuthStateChanged(user => {
     if (user) {
-        store.commit('setCurrentUser', user)
-        store.dispatch('fetchUserProfile')
+        store.commit('setCurrentUser', user);
+        store.dispatch('fetchUserProfile');
+
+        fb.userCollection.doc(user.uid).get().then(res => {
+            return res.data();
+        })
+        .then(userProfile => {
+            fb.officeCollection.doc(userProfile.office.id).onSnapshot(querySnapshot => {
+                store.commit('setOffice', querySnapshot.data());
+            });
+        });
     }
 });
 
@@ -64,7 +73,6 @@ export const store = new Vuex.Store({
             let hasKey = !!data;
             return _updateKey(hasKey, state.currentUser.uid).then((res) => {
                 commit('setUserProfile', res.user);
-                commit('setOffice', res.office);
                 return res;
             });
         },
@@ -72,7 +80,6 @@ export const store = new Vuex.Store({
             let isPresent = !!data;
             return _updatePresence(isPresent, state.currentUser.uid).then((res) => {
                 commit('setUserProfile', res.user);
-                commit('setOffice', res.office);
                 return res;
             });
         }
