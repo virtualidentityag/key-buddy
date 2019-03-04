@@ -20,12 +20,13 @@ export default {
 <style scoped>
 .backButton {
   color: #ffffff;
-  margin: 0;
   padding: 10px 15px;
 }
 .backButton button {
   color: #ffffff;
   font-size: 14px;
+  border: none;
+  background-color: transparent;
 }
 .backButton__arrow::before {
   content: '←';

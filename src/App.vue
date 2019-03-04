@@ -26,5 +26,7 @@ body {
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 0;
   grid-auto-rows: minmax(0, auto);
+  max-width: 768px;
+  margin: 0 auto;
 }
 </style>

@@ -26,7 +26,10 @@
                         content="Login"
                         v-on:click="login"
                 ></Button>
-                <a @click="toggleForm">Create an Account</a>
+                <Button
+                        content="Create an Account"
+                        v-on:click="toggleForm"
+                ></Button>
             </form>
             <form @submit.prevent v-else>
                 <headline content="Sign up!"></headline>
@@ -37,9 +40,15 @@
 
                 <text-input v-model.trim="signupForm.password" type="password" label="Password" id="password2"/>
 
-                <Button content="Sign Up" v-on:click="signup"></Button>
-
-                <a @click="toggleForm">Back to Log In</a>
+                <Button 
+						content="Sign Up" 
+						v-on:click="signup"
+				></Button>
+				
+				<Button 
+						content="Back to Log In" 
+						v-on:click="toggleForm"
+				></Button>
             </form>
             <transition name="fade">
                 <div v-if="errorMsg !== ''" class="error-msg">
@@ -136,7 +145,7 @@
 
 <style>
     .login__wrapper {
-        padding-top: 50%;
+        padding-top: calc(100vh - 450px);
     }
 
     .login__wrapper .headline,
