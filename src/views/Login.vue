@@ -14,11 +14,13 @@
             <form @submit.prevent v-if="showLoginForm">
                 <text-input
                         v-model.trim="loginForm.email"
+				 		id="login-email"
                         type="text"
                         label="Email"
                 ></text-input>
                 <text-input
                         v-model.trim="loginForm.password"
+						id="login-password"
                         type="password"
                         label="Password"
                 ></text-input>
@@ -31,11 +33,26 @@
             <form @submit.prevent v-else>
                 <headline content="Sign up!"></headline>
 
-                <text-input v-model.trim="signupForm.name" type="text" label="Name" id="name"></text-input>
+                <text-input 
+						v-model.trim="signupForm.name" 
+						type="text" 
+						label="Name" 
+						id="signup-name"
+				></text-input>
 
-                <text-input v-model.trim="signupForm.email" type="text" label="Email" id="email2"></text-input>
+                <text-input 
+						v-model.trim="signupForm.email" 
+						type="text" 
+                        label="Email"
+						id="signup-email"
+				></text-input>
 
-                <text-input v-model.trim="signupForm.password" type="password" label="Password" id="password2"/>
+                <text-input 
+						v-model.trim="signupForm.password" 
+						type="password" 
+						label="Password" 
+						id="signup-password"
+				></text-input>
 
                 <Button content="Sign Up" v-on:click="signup"></Button>
 
