@@ -88,6 +88,8 @@
 </script>
 <style>
     .home__container {
+        display: grid;
+        grid-template-rows: auto min-content min-content min-content auto;
         padding: 15px;
     }
 
@@ -97,6 +99,7 @@
 
     .home .headline {
         grid-column: 1 / 9;
+        align-self: end;
     }
 
     .home .inputToggle {
@@ -109,6 +112,7 @@
 
     .home .informationText {
         grid-column: 1 / 13;
+        align-self: start;
     }
 
     .home .counter {

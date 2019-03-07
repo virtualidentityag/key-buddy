@@ -2,14 +2,12 @@
     <div class="header">
         <header>
             <nav>
-                <ul class="header__container container">
-                    <li class="header__link header__link--key">
+                <ul class="header__container">
+                    <li class="header__link header__link--left">
                         <router-link to="/" class="header__link">home</router-link>
                     </li>
-                    <li class="header__link header__link--settings">
+                    <li class="header__link header__link--right">
                         <router-link to="/settings" class="header__link">settings</router-link>
-                    </li>
-                    <li class="header__link header__link--logout">
                         <a @click="logout" href="javascript:void(0)" class="header__link">logout</a>
                     </li>
                 </ul>
@@ -39,10 +37,15 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+	.header {
+		border-bottom: 1px solid #fff;
+	}
     .header__container {
-        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        max-width: 768px;
+        margin: 0 auto;
         padding: 15px 15px 15px 10px;
-        border-bottom: 1px solid #fff;
     }
 
     .header__link {
@@ -52,20 +55,12 @@
         text-decoration: none;
     }
 
-    .header__link--logout,
-    .header__link--settings {
+	.header__link--left {
+		grid-column: 1 / 6;
+	}
+
+	.header__link--right {
+		grid-column: 6 / 13;
         text-align: right;
-    }
-
-	.header__link--key {
-		grid-column: 1 / 4;
-	}
-
-	.header__link--settings {
-		grid-column: 8 / 10;
-	}
-
-	.header__link--logout {
-		grid-column: 10 / 13;
 	}
 </style>
