@@ -1,5 +1,5 @@
 <template>
-  <div class="backButton container" v-on:click="back()">
+  <div class="backButton" v-on:click="back()">
     <div class="backButton__arrow"></div>
     <button>Back</button>
   </div>
@@ -23,10 +23,17 @@ export default {
   padding: 10px 15px;
 }
 .backButton button {
+  display: inline-block;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 18px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
+}
+.backButton__arrow {
+  margin-right: 5px;
+  display: inline-block;
+  cursor: pointer;
 }
 .backButton__arrow::before {
   content: '←';

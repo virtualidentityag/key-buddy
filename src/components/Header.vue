@@ -2,7 +2,7 @@
     <div class="header">
         <header>
             <nav>
-                <ul class="header__container container">
+                <ul class="header__container">
                     <li class="header__link header__link--left">
                         <router-link to="/" class="header__link">home</router-link>
                     </li>
@@ -41,6 +41,9 @@
 		border-bottom: 1px solid #fff;
 	}
     .header__container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 768px;
         margin: 0 auto;
         padding: 15px 15px 15px 10px;
     }
