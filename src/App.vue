@@ -11,13 +11,21 @@
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Quicksand");
 body {
   margin: 0;
 }
+@font-face {
+  font-family: "Quicksand";
+  font-weight: 400;
+  font-style: normal;
+  src: local('Quicksand Regular'), local('Quicksand-Regular'),
+       url('/quicksand-v9-latin-regular.woff2') format('woff2'),
+       url('/quicksand-v9-latin-regular.woff') format('woff');
+  font-display: swap;
+}
 #app {
     background: linear-gradient(to top right, #a39dff, #55a7fc, #50e9be);
-    font-family: "Quicksand", sans-serif;
+    font-family: "Quicksand", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     min-height: 100vh;
 	overflow: auto;
 }
