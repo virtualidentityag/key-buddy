@@ -39,7 +39,8 @@ export const store = new Vuex.Store({
                 commit('setUserProfile', res.data());
                 return res.data();
             });
-        },
+		},
+		/* fetch office of the current user from db and store it in vuex store */ 
         fetchOffice({commit, state, dispatch}) {
             if (state.userProfile && state.userProfile.office && state.userProfile.office.id) {
                 return fb.officeCollection.doc(state.userProfile.office.id).get().then(res => {
@@ -47,6 +48,7 @@ export const store = new Vuex.Store({
                     return res.data();
                 });
             } else {
+				/* fetch current user, then fetch office */
                 return dispatch('fetchUserProfile').then(() => {
                     return fb.officeCollection.doc(state.userProfile.office.id).get().then(res => {
                         commit('setOffice', res.data());
