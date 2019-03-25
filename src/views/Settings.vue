@@ -7,7 +7,7 @@
 		</headline>
 		<bar/>
 
-		<div class="settings__row container">
+		<div class="settings__row">
 			<headline 
 				content="Notifications"
 				headline-class="headline--topLeft"
@@ -20,7 +20,7 @@
 			/>
 		</div>
 
-		<div class="settings__row container">
+		<div class="settings__row">
 			<headline 
 				content="Key owner"
 				headline-class="headline--topLeft"
@@ -88,15 +88,22 @@ export default {
 
 <style>
 .settings {
-    background: linear-gradient(to top right, #20223b, #17362c);   
+  background: linear-gradient(to top right, #20223b, #17362c);   
 	min-height: 100vh;
 }
 
+.settings__row {
+	display: grid;
+	grid-template-columns: repeat(12,1fr);
+}
+
 .settings .settings__row .headline {
+	margin-top: 20px;
 	grid-column: 1 / 9;
 }
 
 .settings .settings__row .inputToggle {
+	margin-top: 20px;
 	grid-column: 9 / 13;
 }
 </style>

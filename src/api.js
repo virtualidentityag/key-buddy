@@ -75,6 +75,11 @@ const updateKey = function (hasKey, uid) {
 						}
 					}
 					return updateUserAndOffice(uid, currentUser, currentUser.office.id, office, resolve, reject);
+				} else {
+					resolve({
+						user: currentUser,
+						office: office
+					});
 				}
 			})
 		});
