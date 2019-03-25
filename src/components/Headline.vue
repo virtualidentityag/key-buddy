@@ -32,7 +32,7 @@ export default {
   font-weight: 200;
   font-size: 30px;
   text-align: center;
-  margin: 0 20px 20px 20px;
+  margin: 0;
 }
 
 .headline--h2 .headline__content {
@@ -40,7 +40,7 @@ export default {
 }
 
 .headline--topLeft {
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .headline--topLeft .headline__content {

@@ -21,9 +21,13 @@ export default {
   text-align: center;
   border-bottom: 8px solid #fff;
   width: 50px;
-  margin: 10% auto;
+  margin: 50px auto;
 }
-.bar.bar--flat {
-  margin: auto;
+
+@media only screen and (min-width: 768px) {
+    .bar {
+      margin-top: 60px;
+      margin-bottom: 60px;
+  }
 }
 </style>

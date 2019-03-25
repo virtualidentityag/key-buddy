@@ -1,7 +1,8 @@
 <template>
 	<div class="inputWrapper">
-		<label>{{label}}</label>
+		<label :for="id">{{label}}</label>
 		<input 
+			:id="id"
 			:type="type" 
 			v-bind:value="value" 
 			v-on:input="$emit('input', $event.target.value)">
@@ -10,21 +11,25 @@
 
 <script>
 export default {
-  name: 'TextInput',
-  props: {
-    label: {
-      type: String,
-      default: ''
-    },
-    type: {
-      type: String,
-      default: ''
-    },
-    value: {
-      type: String,
-      default: ''
-    }
-  }
+	name: 'TextInput',
+	props: {
+		label: {
+			type: String,
+			default: ''
+		},
+		type: {
+			type: String,
+			default: ''
+		},
+		value: {
+			type: String,
+			default: ''
+		},
+		id: {
+			type: String,
+			default: ''
+		}
+	}
 };
 </script>
 

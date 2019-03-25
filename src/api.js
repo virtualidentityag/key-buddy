@@ -2,6 +2,7 @@
 import 'firebase/firestore'
 const fb = require('./firebaseConfig.js')
 
+/* return the current user */
 const getUser = function (uid) {
 	if (!fb.userCollection) {
 		throw new ReferenceError('Could not find "userCollection" in your firebaseConfig.js!');
@@ -15,12 +16,14 @@ const getUser = function (uid) {
 		});
 };
 
+/* update the current user, then return updated user */
 const setUser = function (uid, user) {
 	return fb.userCollection.doc(uid).update(user).then(() => {
 		return getUser(uid);
 	});
 };
 
+/* return office by id */
 const getOffice = function (id) {
 	if (!fb.officeCollection) {
 		throw new ReferenceError('Could not find "officeCollection" in your firebaseConfig.js!');
@@ -34,6 +37,16 @@ const getOffice = function (id) {
 		});
 };
 
+/* 
+ * update key status to boolean hasKey:
+ *   - true = user owns a key
+ *   - false = user doen't own a key
+ * get user, check if key status changed, update key status of user
+ * get office, update number of keys which exist for this office
+ * if user is in office, update number of keys that are currently in the office
+ * 
+ * return promise of { user, office }
+ */
 const updateKey = function (hasKey, uid) {
 	let promise = new Promise((resolve, reject) => {
 		let currentUser = {};
@@ -62,6 +75,11 @@ const updateKey = function (hasKey, uid) {
 						}
 					}
 					return updateUserAndOffice(uid, currentUser, currentUser.office.id, office, resolve, reject);
+				} else {
+					resolve({
+						user: currentUser,
+						office: office
+					});
 				}
 			})
 		});
@@ -69,6 +87,16 @@ const updateKey = function (hasKey, uid) {
 	return promise;
 };
 
+/*
+ * update presence of user in office to isPresent:
+ *   - true: user is in office
+ * 	 - false: user is out of office
+ * get user, update presence status
+ * get office, if user has a key, update number of keys in office
+ * update number of users in office
+ * 
+ * return promise of { user, office }
+ */
 const updatePresence = function (isPresent, uid) {
 	let promise = new Promise((resolve, reject) => {
 		let currentUser = {};
@@ -104,6 +132,10 @@ const updatePresence = function (isPresent, uid) {
 	return promise;
 };
 
+/* 
+ * update user and office in DB
+ * return an object { user, office } as a promise
+ */
 const updateUserAndOffice = function(userId, user, officeId, office, resolve, reject) {
 	return Promise.all([
 		fb.userCollection.doc(userId).update(user),
