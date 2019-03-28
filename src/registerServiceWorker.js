@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 					_requestPermission();
 				} else {
 					// We have a subscription, update the database
-					console.log('Subscription object: ', sub);
+					console.log('Already subscribed to push service. Subscription object: ', sub);
 					_addPushNotificationListener(reg);
 				}
 			});

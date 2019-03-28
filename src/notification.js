@@ -8,34 +8,34 @@ function requestPermission() {
 }
 
 function subscribeUser() {
-	console.log('subscribe 1');
+	console.log('Subscribe user 1');
 	if ('serviceWorker' in navigator) {
-		console.log('subscribe 2', navigator.serviceWorker);
+		console.log('Subscribe user 2', navigator.serviceWorker);
 		navigator.serviceWorker.ready.then(function (reg) {
-			console.log('subscribe 3', reg);
+				console.log('Subscribe user 3', reg);
 
-			reg.pushManager.subscribe({
-				userVisibleOnly: true
-			}).then(function (sub) {
-				console.log('Endpoint URL: ', sub, sub.endpoint);
-				addPushNotificationListener(reg);
-			}).catch(function (e) {
-				if (Notification.permission === 'denied') {
-					console.warn('Permission for notifications was denied');
-				} else {
-					console.error('Unable to subscribe to push', e);
-				}
-			});
-		})
-		.catch(err => {
-			console.log(err);
-		})
+				reg.pushManager.subscribe({
+					userVisibleOnly: true
+				}).then(function (sub) {
+					console.log('Endpoint URL: ', sub, sub.endpoint);
+					addPushNotificationListener(reg);
+				}).catch(function (e) {
+					if (Notification.permission === 'denied') {
+						console.warn('Permission for notifications was denied');
+					} else {
+						console.error('Unable to subscribe to push', e);
+					}
+				});
+			})
+			.catch(err => {
+				console.log(err);
+			})
 	}
 }
 
 function addPushNotificationListener(el) {
 	// https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications#handling_the_push_event_in_the_service_worker
-	console.log('add event listener', el);
+	console.log('Add push notification event listener', el, navigator);
 	el.addEventListener('push', function (e) {
 		console.log('RECEIVED PUSH!!', e);
 		var options = {

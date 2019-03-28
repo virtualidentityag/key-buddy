@@ -33,12 +33,8 @@ First:
 ```
 npm install -g serve
 ```
-After serve is installed build the project
+After serve is installed build the project and start the server
 ```
-npm run build
-```
-Then
-```
-http-server dist
+npm run build && http-server dist
 ```
 Now your Serviceworker will work properly. Have Fun!
