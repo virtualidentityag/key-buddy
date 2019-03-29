@@ -59,7 +59,7 @@ self.addEventListener('notificationclick', event => {
 });
 
 self.addEventListener('push', event => {
-	console.log('push');
+	console.log('push', self);
 	let body;
 
 	if (event.data) {

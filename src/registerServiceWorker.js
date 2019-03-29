@@ -1,10 +1,7 @@
 /* eslint-disable no-console */
 
 import { register } from 'register-service-worker'
-import {
-	addPushNotificationListener as _addPushNotificationListener,
-	requestPermission as _requestPermission
-} from './notification.js'
+import { requestPermission as _requestPermission } from './notification.js'
 
 if (process.env.NODE_ENV === 'production') {
 
@@ -25,7 +22,6 @@ if (process.env.NODE_ENV === 'production') {
 				} else {
 					// We have a subscription, update the database
 					console.log('Already subscribed to push service. Subscription object: ', sub);
-					_addPushNotificationListener(reg);
 				}
 			});
 		},
