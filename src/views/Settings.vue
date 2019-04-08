@@ -40,6 +40,7 @@ import BackButton from '../components/BackButton.vue';
 import Headline from '../components/Headline.vue';
 import Bar from '../components/Bar.vue';
 import InputToggle from '../components/InputToggle.vue';
+const fb = require('../firebaseConfig.js');
 
 export default {
     name: 'Settings',

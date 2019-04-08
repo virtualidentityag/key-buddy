@@ -12,8 +12,8 @@ module.exports = {
             globPatterns: [
                 '**/*.{css,ico,html,js,json,txt}'
             ],
-            swDest: 'service-worker.js',
-            swSrc: 'src/service-worker.js',
+            swDest: 'firebase-messaging-sw.js',
+            swSrc: 'src/firebase-messaging-sw.js',
         }
     }
 };

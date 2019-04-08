@@ -19,3 +19,20 @@ fb.auth.onAuthStateChanged(() => {
     }
 
 });
+
+const messaging = fb.messaging;
+    messaging
+        .requestPermission()
+        .then(() => {
+                // eslint-disable-next-line
+            console.log("Notification permission granted.");
+            return messaging.getToken();
+        })
+        .then((token) => {
+            // eslint-disable-next-line
+          console.log('Token: ' + token);
+        })
+        .catch(function (err) {
+                // eslint-disable-next-line
+        console.log("Unable to get permission to notify.", err);
+    });

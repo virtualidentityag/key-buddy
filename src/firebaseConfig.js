@@ -16,6 +16,7 @@ firebase.initializeApp(config);
 const db = firebase.firestore();
 const auth = firebase.auth();
 const currentUser = auth.currentUser;
+const messaging = firebase.messaging();
 
 const userCollection = db.collection('user');
 const officeCollection = db.collection('office');
@@ -25,5 +26,6 @@ export {
     auth,
     currentUser,
     userCollection,
-    officeCollection
+    officeCollection,
+    messaging
 }
