@@ -1,10 +1,10 @@
 <template>
     <div class="header">
         <header>
-            <nav>
+            <nav  v-if="userProfile.name">
                 <ul class="header__container">
                     <li class="header__link header__link--left">
-                        <router-link to="/" class="header__link">home</router-link>
+                        <router-link to="/" class="header__link">{{ userProfile.name }}</router-link>
                     </li>
                     <li class="header__link header__link--right">
                         <router-link to="/settings" class="header__link">
@@ -22,6 +22,7 @@
 
 <script>
     const fb = require('../firebaseConfig.js');
+    import {mapState} from 'vuex';
 
     export default {
         name: 'Header',
@@ -35,7 +36,10 @@
                     console.log(err);
                 })
             }
-        }
+        },
+        computed: {
+            ...mapState(['userProfile'])
+        },
     };
 </script>
 
