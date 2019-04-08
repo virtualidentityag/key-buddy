@@ -210,4 +210,10 @@
             opacity: 0;
         }
     }
+
+    .error-msg {
+        padding: 15px;
+        color: #fff;
+        text-align: center;
+    }
 </style>

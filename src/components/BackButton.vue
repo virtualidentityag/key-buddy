@@ -1,7 +1,8 @@
 <template>
-  <div class="backButton" v-on:click="back()">
-    <div class="backButton__arrow"></div>
-    <button>Back</button>
+  <div class="backButton">
+    <div class="backButton__button" v-on:click="back()">
+      <svg height="30px" id="Layer_1" style="enable-background:new 0 0 30 30;" version="1.1" viewBox="0 0 16 16" width="30px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M15,6H8V3c0-0.484-0.375-1-1-1C6.539,2,6.305,2.287,6,2.54L0.625,7C0.242,7.313,0,7.555,0,8s0.242,0.688,0.625,1L6,13.46  C6.305,13.713,6.539,14,7,14c0.625,0,1-0.516,1-1v-3h7c0.55,0,1-0.45,1-1V7C16,6.45,15.55,6,15,6z"/></svg>
+    </div>
   </div>
 </template>
 
@@ -20,25 +21,17 @@ export default {
 <style scoped>
 .backButton {
   color: #ffffff;
-  padding: 10px 15px;
+  padding: 20px 15px 10px;
 }
-.backButton button {
+.backButton .backButton__button {
+  padding: 0;
   display: inline-block;
-  color: #ffffff;
-  font-size: 18px;
-  border: none;
-  background-color: transparent;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
 }
-.backButton__arrow {
-  margin-right: 5px;
-  display: inline-block;
-  cursor: pointer;
-}
-.backButton__arrow::before {
-  content: '←';
-  font-size: 32px;
-  color: #ffffff;
-  font-weight: 700;
+
+svg {
+  fill: #fff;
 }
 </style>

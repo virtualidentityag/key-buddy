@@ -1,37 +1,39 @@
 <template>
     <div class="settings">
-		<back-button/>
-		<headline 
-			content="Settings"
-		>
-		</headline>
-		<bar/>
+			<back-button/>
+			<div class="settings__container container">
+				<headline 
+					content="Settings"
+				>
+				</headline>
+				<bar/>
 
-		<div class="settings__row">
-			<headline 
-				content="Notifications"
-				headline-class="headline--topLeft"
-				:level="2"
-			>
-			</headline>
-			<input-toggle 
-				:checked="hasNotifications" 
-				v-on:toggle="toggleNotifications"
-			/>
-		</div>
+				<div class="settings__row">
+					<headline 
+						content="Notifications"
+						headline-class="headline--topLeft"
+						:level="2"
+					>
+					</headline>
+					<input-toggle 
+						:checked="hasNotifications" 
+						v-on:toggle="toggleNotifications"
+					/>
+				</div>
 
-		<div class="settings__row">
-			<headline 
-				content="Key owner"
-				headline-class="headline--topLeft"
-				:level="2"
-			>
-			</headline>
-			<input-toggle 
-				:checked="hasKey" 
-				v-on:toggle="toggleKey"
-			/>
-		</div>
+				<div class="settings__row">
+					<headline 
+						content="Key owner"
+						headline-class="headline--topLeft"
+						:level="2"
+					>
+					</headline>
+					<input-toggle 
+						:checked="hasKey" 
+						v-on:toggle="toggleKey"
+					/>
+				</div>
+			</div>
     </div>
 </template>
 
@@ -90,6 +92,17 @@ export default {
 .settings {
   background: linear-gradient(to top right, #20223b, #17362c);   
 	min-height: 100vh;
+}
+
+.settings__container {
+	min-width: 320px;
+	display: grid;
+	grid-template-rows: 20% min-content min-content min-content;
+	padding: 15px;
+}
+
+.settings .headline {
+	align-self: end;
 }
 
 .settings__row {
